@@ -2,6 +2,7 @@
 
 var http = require('http');
 var fs = require('fs');
+var os = require('os');
 
 var readFile = fs.createReadStream("./web/index.html");
 
@@ -12,7 +13,11 @@ var staticServer = http.createServer(function(req, res){
 
 	readFile.pipe(res);
 	readFile.pipe(process.stdout)
-	
+
 });
 
-staticServer.listen(80);
+staticServer.listen(80, function(){
+	console.log("Listening on port 80 on the following interfaces:");
+
+	console.log(os.networkInterfaces());
+});

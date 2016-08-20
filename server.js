@@ -12,8 +12,6 @@ var staticServer = http.createServer(function(req, res){
 	res.status = 200;
 
 	readFile.pipe(res);
-	readFile.pipe(process.stdout)
-
 });
 
 staticServer.listen(80, function(){

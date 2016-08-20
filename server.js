@@ -1,19 +1,24 @@
-'use strict';
+"use strict";
 
-var http = require('http');
-var fs = require('fs');
-var os = require('os');
+let express = require("express");
+let os = require("os");
 
-var staticServer = http.createServer(function(req, res){
-	console.log('Got ' + req.method + ' request for ' + req.url);
+let app = express();
 
-	res.status = 200;
+app.use("/", express.static("web"));
 
-	fs.createReadStream("./web/index.html").pipe(res);
-});
-
-staticServer.listen(80, function(){
+app.listen(80, function(){
 	console.log("Listening on port 80 on the following interfaces:");
 
-	console.log(os.networkInterfaces());
+	let inters = os.networkInterfaces();
+
+	for (let inter in inters){
+		if (!inters.hasOwnProperty(inter)) continue;
+
+		console.log(inter + ":");
+
+		for (let addressBlock of inters[inter]){
+			console.log("\t" + addressBlock.address)
+		}
+	}
 });

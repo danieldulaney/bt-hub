@@ -1,2 +1,5 @@
 # Local utility files
 *.sublime-*
+
+# Dependency modules
+node_modules

@@ -4,7 +4,7 @@
   "description": "A web-accessible bluetooth hub for Raspberry Pi",
   "author": "Daniel Dulaney",
   "scripts": {
-    "start": "nodejs server.js",
+    "start": "node server.js",
     "prepublish": "node "
   },
   "repository": {

@@ -1,24 +1,25 @@
 {
-	"name": "bt-hub",
-	"version": "0.1",
-	"description": "A web-accessible bluetooth hub for Raspberry Pi",
-	"author": "Daniel Dulaney",
-	"scripts": {
-		"start": ""
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/danieldulaney/bt-hub"
-	},
-	"bugs": {
-		"url": "https://github.com/danieldulaney/bt-hub/issues"
-	},
-	"dependencies": {
-
-	},
-	"devDependencies": {
-
-	},
-	"private": true,
-	"license": "MIT"
+  "name": "bt-hub",
+  "version": "0.0.1",
+  "description": "A web-accessible bluetooth hub for Raspberry Pi",
+  "author": "Daniel Dulaney",
+  "scripts": {
+    "start": "nodejs server.js",
+    "prepublish": "node "
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danieldulaney/bt-hub"
+  },
+  "bugs": {
+    "url": "https://github.com/danieldulaney/bt-hub/issues"
+  },
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "gulp": "~3.9"
+  },
+  "private": true,
+  "license": "MIT"
 }
